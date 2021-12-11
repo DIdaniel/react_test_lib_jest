@@ -47,8 +47,8 @@ test("초기 상태", () => {
 
 test("첫번째 체크박스 클릭하면 비활성화, 두번째 클릭하면 활성화 되는지", () => {
   render(<App />);
-  const colorButton = screen.getByRole("button");
-  const checkBox = screen.getByRole("checkbox");
+  const checkBox = screen.getByRole("checkbox", { name: "Disable button" });
+  const colorButton = screen.getByRole("button", { name: "Change to blue" });
 
   fireEvent.click(checkBox);
   expect(colorButton).toBeDisabled();
